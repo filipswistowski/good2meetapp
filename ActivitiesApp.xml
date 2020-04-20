@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>activitiesapp</name>
+    </assembly>
+    <members>
+        <member name="T:activitiesapp.Controllers.CategoryController">
+            <summary>
+            Management of categories
+            </summary>
+        </member>
+        <member name="M:activitiesapp.Controllers.CategoryController.Get">
+            <summary>
+            Returns all categories in database
+            </summary>
+            <response code="200">Returns list of categories</response>
+            <response code="500">If there is a server error</response>  
+        </member>
+        <member name="M:activitiesapp.Controllers.CategoryController.GetCategoryById(System.Int32)">
+            <summary>
+            Returns category of given id
+            </summary>
+            <param name="CategoryId">Id of the category we want to get</param>
+            <response code="200">Returns category by given id</response>
+            <response code="404">If there is no category with given id</response>  
+            <response code="500">If there is a server error</response>  
+        </member>
+        <member name="M:activitiesapp.Controllers.CategoryController.Post(activitiesapp.Models.CategoryDTO)">
+            <summary>
+            Creates a new category
+            </summary>
+            <response code="201">Creates category with given name</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.CategoryController.Put(System.Int32,activitiesapp.Models.CategoryDTO)">
+            <summary>
+            Changes name of category with given ID
+            </summary>
+            <param name="CategoryId">Id of the category we want to change name</param>
+            <response code="200">Succesfully changed name of category</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.CategoryController.Delete(System.Int32)">
+            <summary>
+            Deletes category with given ID
+            </summary>
+            <param name="CategoryId">Id of the category we want to delete</param>
+            <response code="200">Succesfully removed category</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.EventController.Get">
+            <summary>
+            Returns all events in database
+            </summary>
+            <response code="200">Returns list of events</response>
+            <response code="500">If there is a server error</response>  
+        </member>
+        <member name="M:activitiesapp.Controllers.EventController.GetEventById(System.Int32)">
+            <summary>
+            Returns event of given id
+            </summary>
+            <param name="EventId">Id of the event we want to get</param>
+            <response code="200">Returns event by given id</response>
+            <response code="404">If there is no event with given id</response>  
+            <response code="500">If there is a server error</response>  
+        </member>
+        <member name="M:activitiesapp.Controllers.EventController.Post(activitiesapp.Models.EventFullDTO)">
+            <summary>
+            Creates a new event
+            </summary>
+            <response code="201">Creates event with given parameters</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.EventController.Delete(System.Int32)">
+            <summary>
+            Deletes event with given ID
+            </summary>
+            <param name="EventId">Id of the event we want to delete</param>
+            <response code="200">Succesfully removed event</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.EventController.AddParticipant(System.Int32,System.Int32,activitiesapp.Models.ParticipantsDTO)">
+            <summary>
+            Adds a user of given id as participant to event with given id
+            </summary>
+            <param name="EventId">Id of the event we want to join</param>
+            <param name="UserId">Id of the user which want to join the event</param>
+            <response code="200">Succesfully signed for event</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.EventController.GetAllEventsWithParticipants">
+            <summary>
+            Gets list of all events with participants
+            </summary>
+            <response code="200">Succesfully signed for event</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.EventController.GetParticipantsByEventId(System.Int32)">
+            <summary>
+            Gets list of participant for given event
+            </summary>
+            <param name="EventId">Id of the event we want to get users of</param>
+            <response code="200">Returns list of users for given event</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.EventController.GetEventsByParticipantsId(System.Int32)">
+            <summary>
+            Gets list of events that given user participates
+            </summary>
+            <param name="UserId">Id of the user we want to get events he/she participates</param>
+            <response code="200">Returns list of events for given user</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.EventController.GetEventsHostedByUser(System.Int32)">
+            <summary>
+            Gets list of events that given user hosts
+            </summary>
+            <param name="UserId">Id of the user we want to get events he/she hosts</param>
+            <response code="200">Returns list of events hosted by given user</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.EventController.Put(System.Int32,activitiesapp.Models.EventDTO.EventUpdateDTO)">
+            <summary>
+            Changes parameters of event by given id
+            </summary>
+            <param name="EventId">Id of the event we want to change parameters</param>
+            <response code="200">Succesfully changed parameters</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.EventController.DeleteParticipantFromEvent(System.Int32,System.Int32)">
+            <summary>
+            Deletes participant from event
+            </summary>
+            <param name="EventId">Id of the event we want to user to stop participating</param>
+            <param name="UserId">Id of the user which want we want to remove from participating</param>
+            <response code="200">Succesfully removed user from event</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="T:activitiesapp.Controllers.UserController">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:activitiesapp.Controllers.UserController.Get">
+            <summary>
+            Returns all users in database
+            </summary>
+            <response code="200">Returns list of users</response>
+            <response code="500">If there is a server error</response>  
+        </member>
+        <member name="M:activitiesapp.Controllers.UserController.GetUserById(System.Int32)">
+            <summary>
+            Returns users of given id
+            </summary>
+            <param name="UserId">Id of the user we want to get</param>
+            <response code="200">Returns user by given id</response>
+            <response code="404">If there is no user with given id</response>  
+            <response code="500">If there is a server error</response>  
+        </member>
+        <member name="M:activitiesapp.Controllers.UserController.Post(activitiesapp.Models.UserFullDTO)">
+            <summary>
+            Creates a new user
+            </summary>
+            <response code="201">Creates user with given parameters</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.UserController.Authenticate(activitiesapp.Models.UserDTO.UserLoginDTO)">
+            <summary>
+            User login authentication
+            </summary>
+            <response code="200">Succesfull authentication</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.UserController.Put(System.Int32,activitiesapp.Models.UserUpdateDTO)">
+            <summary>
+            Changes name of user by given id
+            </summary>
+            <param name="EventId">Id of the user we want to change name</param>
+            <response code="200">Succesfully changed name</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="M:activitiesapp.Controllers.UserController.Delete(System.Int32)">
+            <summary>
+            Deletes user with given ID
+            </summary>
+            <param name="UserId">Id of the user we want to delete</param>
+            <response code="200">Succesfully removed user</response>
+            <response code="400">Invalid input</response>  
+            <response code="500">If there is a server error</response>
+        </member>
+        <member name="P:activitiesapp.Models.Category.CategoryId">
+            <summary>
+            The Id of the category
+            </summary>
+        </member>
+        <member name="P:activitiesapp.Models.Category.CategoryName">
+            <summary>
+            Name of the category
+            </summary>
+        </member>
+        <member name="P:activitiesapp.Models.Category.Events">
+            <summary>
+            Event Category reference for foreign key
+            </summary>
+        </member>
+    </members>
+</doc>
