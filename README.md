@@ -17,6 +17,5 @@ We implemented the Depedency Injection desing pattern, features like SMTP mail s
 
 Our plans for further development are:
 
-- Acctually host a website somewhere, so you can check it out on your own :D
 - Implement account registration with Google account
 - Implement geolocalization
